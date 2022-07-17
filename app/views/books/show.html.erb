@@ -1,2 +1,15 @@
-<h1>Index#show</h1>
-<p>Find me in app/views/index/show.html.erb</p>
+
+
+<h1>Book detail</h1>
+
+<%= image_tag @book.user.profile_image %>
+<%= link_to user_path(@user) do%>
+  <%= @book.user.name %>
+<% end %>
+
+<%= @book.title %>
+<%= @book.body %>
+<% if @user == current_user %>
+    <p><%= link_to "Edit", edit_book_path(@book) %></p>
+
+<% end %>
