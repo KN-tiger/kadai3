@@ -37,9 +37,11 @@ class BooksController < ApplicationController
   end
   
   def update
-
-
-
+    
+    book = Book.find(params[:id])
+    book.update(book_params)
+    render book_path(book.id)
+    
   end
 
   def destroy
