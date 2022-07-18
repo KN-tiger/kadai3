@@ -16,5 +16,5 @@
 <%= @bookf.body %>
 <% if @user == current_user %>
     <%= link_to "Edit", edit_book_path(@bookf) %>
-    <%= link_to "Destroy", book_path(@bookf), method: :delete %>
+    <%= link_to "Destroy", book_path(@bookf), method: :delete, "data-confirm" => "本当に消しますか？" %>
 <% end %>
