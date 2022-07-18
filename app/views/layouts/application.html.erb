@@ -13,7 +13,7 @@
   <body>
     <header>
 
-      <%= link_to "Bookers", root_path %>
+      <a class="navbar-brand" href="/"><span>Bookers</span></a>
 
       <% if user_signed_in? %>
         <li>
@@ -51,6 +51,7 @@
   　</header>
 
   　<%= render 'layouts/flash' %>
+    
 
     <%= yield %>
 
