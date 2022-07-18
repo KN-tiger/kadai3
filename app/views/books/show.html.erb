@@ -1,15 +1,20 @@
+<%= render 'users/info', user: @user %>
 
+<%= render 'form', book: @book %>
 
 <h1>Book detail</h1>
 
-<%= image_tag @book.user.profile_image %>
+<%= image_tag @bookf.user.get_profile_image(100,100) %>
 <%= link_to user_path(@user) do%>
-  <%= @book.user.name %>
+  <%= @bookf.user.name %>
 <% end %>
 
-<%= @book.title %>
-<%= @book.body %>
-<% if @user == current_user %>
-    <p><%= link_to "Edit", edit_book_path(@book) %></p>
+<%= link_to book_path(@bookf) do%>
+  <%= @bookf.title %>
+<% end %>
 
+<%= @bookf.body %>
+<% if @user == current_user %>
+    <%= link_to "Edit", edit_book_path(@bookf) %>
+    <%= link_to "Destroy", book_path(@bookf), method: :delete %>
 <% end %>
